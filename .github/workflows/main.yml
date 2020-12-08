@@ -37,12 +37,13 @@ jobs:
           dependency-list: .github/workflows/dependencies.txt
           python-dependency-list: .github/workflows/dependencies-python.txt
       - name: Build
-        run: /usr/bin/bash .github/workflows/build-rpm.sh "${GITHUB_REF##*/}"
+        id: build
+        uses: ./.github/actions/elements-build-rpm
       - name: Upload RPM to GitHub
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.os-type }}${{ matrix.os-version }}
-          path: build/Packages/RPM/RPMS/x86_64/*.rpm
+          path: ${{ steps.build.outputs.rpm-dir }}/*.rpm
           retention-days: 15
       - name: Setup jfrog cli
         if: ${{ github.event_name != 'pull_request' }}
