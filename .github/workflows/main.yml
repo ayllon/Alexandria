@@ -30,15 +30,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Get package name and version
         id: package-version
-        uses: ./.github/actions/elements-project
+        uses: astrorama/actions/elements-project@master
       - name: Install dependencies
-        uses: ./.github/actions/setup-dependencies
+        uses: astrorama/actions/setup-dependencies@master
         with:
           dependency-list: .github/workflows/dependencies.txt
           python-dependency-list: .github/workflows/dependencies-python.txt
       - name: Build
         id: build
-        uses: ./.github/actions/elements-build-rpm
+        uses: astrorama/actions/elements-build-rpm@master
       - name: Upload RPM to GitHub
         uses: actions/upload-artifact@v2
         with:
