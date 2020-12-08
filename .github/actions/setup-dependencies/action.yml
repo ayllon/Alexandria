@@ -13,4 +13,4 @@ runs:
     - shell: bash
       run: ${{ github.action_path }}/setup-repositories.sh
     - shell: bash
-      run: ${{ github.action_path }}/install-dependencies.sh "${{ inputs.dependency-list }}" "${{ python-dependency-list }}"
+      run: ${{ github.action_path }}/install-dependencies.sh "${{ inputs.dependency-list }}" "${{ inputs.python-dependency-list }}"
