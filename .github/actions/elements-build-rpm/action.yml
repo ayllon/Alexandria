@@ -11,7 +11,7 @@ outputs:
     value: ${{ inputs.build-dir }}/Packages/RPM/RPMS/x86_64/
   srpm-dir:
     description: 'Directory where source rpms are'
-    value: ${{ inputs.build-dir }}/Packages/RPM/SRPMS/x86_64/
+    value: ${{ inputs.build-dir }}/Packages/RPM/SRPMS/
 runs:
   using: composite
   steps:
