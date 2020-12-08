@@ -9,7 +9,7 @@ if [ "$ID" == "centos" ]; then
   yum install -y epel-release
   # Need powertools on CentOS8
   if [ "$VERSION_ID" -ge 8 ]; then
-    sed -i "s/enabled=0/enabled=1/" /etc/yum.repos.d/CentOS-PowerTools.repo
+    sed -i "s/enabled=0/enabled=1/" /etc/yum.repos.d/CentOS*-PowerTools.repo
   fi
 fi
 
